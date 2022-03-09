@@ -1,0 +1,136 @@
+body{
+    font-family: 'Poppins';
+    font-size: $default-font-size;
+    color: rgba($black,0.68);
+}
+
+.header-text{
+    color: #000;
+    position: relative;
+    height: 25rem;
+    width: 100%;
+    & div{
+        height: 50%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        & h1{
+            font-size: 4.5rem;
+            position: absolute;
+            animation: showTopText 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            bottom: 0;
+            transform: translate(0, 100%);
+            color: $black;
+        }
+        & span{
+            display: block;
+        }
+        
+    }
+    &__title{
+        position: relative;
+        &::after{
+            position: absolute;
+            animation: titleBottom 1s;
+            animation-delay: 1.75s;
+            animation-fill-mode: forwards;
+            height: 2.1rem;
+            left: 0%;
+            z-index: -1;
+            bottom: 1rem;
+            content: '';
+            background-color: $blue-baby-dark;
+            
+        }
+        &--sub{
+            &::after{
+                animation: subTitleBottom 1s;
+                animation-delay: 1.75s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+    & .header-text__top{
+        border-bottom: 0.2rem solid #000;
+        top: 0;
+    }
+    & .header-text__bottom{
+        bottom: 0;
+        & h2{
+            animation: showBottomText 0.5s;
+            animation-delay: 1.75s;
+            animation-fill-mode: forwards;
+            top: 0;
+            transform: translate(0, -100%);
+        }
+    }
+}
+
+
+.title{
+    color: $black;
+    font-size: 4rem;
+    line-height: 5rem;
+    text-align: center;
+    &--little{
+        font-size: 2.5rem;
+    }
+    & span {
+        background-image: linear-gradient(
+          transparent calc(65% - 5px),
+          darken($blue-baby, 15%) 5px,
+        );
+        background-size: 0;
+        background-repeat: no-repeat;
+        display: inline;
+        transition: 0.5s ease;
+      }
+}
+
+
+
+@media (max-width: 991.98px) { 
+    .title{
+        font-size: 3rem;
+    }
+    .header-text{
+        margin-top: 10rem;
+        
+    }
+    
+}
+
+@media (max-width: 568px) { 
+    .header-text{
+        & div{
+            & h1{
+                font-size: 3rem;
+            }
+            
+        }
+        &__title{
+            &::after{
+                height: 1.3rem;
+                
+            }
+        }
+        & .header-text__bottom{
+            
+            & h2{
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .title{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 480px) {
+    
+    
+}

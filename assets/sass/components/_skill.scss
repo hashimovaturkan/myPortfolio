@@ -1,0 +1,81 @@
+.skill{
+    @include flexbox;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    flex-direction: column;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    &__title{
+        margin-bottom: 12px;
+        font-family:'Courier New', Courier, monospace;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 400;
+        margin-top: 4px;
+        font-weight: 600;
+        color: $black;
+        text-align: center
+    }
+    &__icon{
+        @include flexbox;
+        position: relative;
+        padding: 12px;
+    }
+    &__circles{
+        position: absolute;
+        left: 6%;
+        top: 6%;
+        right: 6%;
+        bottom: 6%;
+        z-index: 1;
+    }
+    &__circle-1{
+        position: absolute;
+        left: 0%;
+        top: auto;
+        right: auto;
+        bottom: 0%;
+        z-index: 3;
+        width: 45%;
+        height: 45%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        background-color: #ef7c54;
+        opacity: 0.5;
+    }
+    &__circle-2{
+        position: absolute;
+        left: auto;
+        top: 0%;
+        right: 0%;
+        bottom: auto;
+        z-index: 3;
+        width: 35%;
+        height: 35%;
+        margin-top: 5%;
+        margin-right: 5%;
+        border-radius: 50%;
+        background-color: #71a882;
+        opacity: 0.5;
+    }
+    &__circle-3{
+        position: absolute;
+        left: auto;
+        top: auto;
+        right: 0%;
+        bottom: 0%;
+        z-index: 3;
+        width: 28%;
+        height: 28%;
+        margin-right: 12%;
+        margin-bottom: 5%;
+        border-radius: 50%;
+        background-color: #f8cb35;
+        opacity: 0.5
+    }
+    &__img{
+        position: relative;
+        z-index: 2;
+        width: 72px;
+    }
+}

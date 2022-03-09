@@ -1,0 +1,137 @@
+.menu{
+    padding:0 2rem;
+    @include flexbox;
+    transition: all 0.5s;
+    &--back{
+        background-color: $white;
+        box-shadow: 0 8px 24px 0 rgba(0, 0, 0 , .12);
+    }
+    &__navbar{
+        opacity: 0;
+        transition: all .5s;
+    }
+    &__btn{
+        display:flex;
+        flex-direction:column;
+        width:4rem;
+        padding: 1rem 0;
+        cursor:pointer;
+        & span{
+            background: $black;
+            border-radius:10px;
+            height:0.2rem;
+            margin: 0.3rem 0;
+            transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        }
+        & span:nth-of-type(1){
+            width:50%;
+        }
+        & span:nth-of-type(2){
+            width:100%;
+        }
+        & span:nth-of-type(3){
+            width:75%;
+        }
+        & input[type="checkbox"]{
+            display:none;
+        }
+        & input[type="checkbox"]:checked ~ span:nth-of-type(1){
+            transform-origin:bottom;
+            transform:rotatez(45deg) translate(2px,-1px)
+        }
+        & input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  
+            transform-origin:top;
+            transform:rotatez(-45deg)
+        }
+        & input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  
+            transform-origin:bottom;
+            width:50%;
+            transform: translate(17px,-1px) rotatez(45deg);
+          
+        }
+          
+    }
+    &__list{
+        display: flex;
+    }
+    &__list-item{
+        margin-left: 2rem;
+        
+    }
+    &__list-link{
+        box-sizing: border-box;
+        display: inline-block;
+        color: $black;
+        position: relative;
+        padding: 0.8rem;
+        &::after{
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0%;
+            display: inline-block;
+            content: '';
+            width: 0;
+            height: 0;
+            background-color: black;
+            transition: all 1s;
+        }
+        &:hover{
+            &::after{
+                width: 100%;
+                height: 1px;
+            }
+        }
+        
+    }
+
+    &__navbar-bigger{
+        position: fixed;
+        height: 100%;
+        left: -100%;
+        top: 0%;
+        width: 100%;
+        background-color: $white;
+	    background: radial-gradient(circle, $blue-baby 0%, $blue-baby 34%, rgba(255,255,255,1) 100%);
+        transition: 1s all ease-in-out;
+    }
+    &__list-bigger{
+        @include flexbox;
+        flex-direction: column;
+
+    }
+    &__item-bigger{
+        margin: 1rem 0;
+        width: 100%;
+    }
+    &__link-bigger{
+        @include flexbox;
+        padding: 1.5rem;
+        font-size: 2rem;
+        color: $black;
+        font-weight: $fw-medium;
+        transition: 1s all;
+        &:hover{
+            background: $blue-baby-dark;
+            background: radial-gradient(circle, $blue-baby-dark 0%, $blue-baby-dark 34%, rgba(255,255,255,1) 100%);
+        }
+    }
+    &__navbar-close{
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        padding: 2rem 5rem;
+    }
+    
+}
+
+@media screen and (max-width: 991.98px) { 
+    .menu--back{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .menu__navbar{
+        display: none;
+    }
+}

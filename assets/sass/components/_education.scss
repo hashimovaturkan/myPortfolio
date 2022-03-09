@@ -1,0 +1,75 @@
+.education{
+    display: flex;
+    &__icon-wrapper{
+        @include flexbox;
+        margin-right: 3rem;
+        flex-direction: column;
+    }
+    &__icon{
+        @include flexbox;
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid $gray-light;
+        border-radius: 50%;
+        
+    }
+    &__img{
+        width: 2.2rem;
+    }
+    &__line{
+        width: 0.1rem;
+        height: 20rem;
+        background-color: $gray-light;
+        &--end{
+            background-image: -webkit-gradient(linear, left top, left bottom, from($gray-light), color-stop(81%, $white));
+            background-image: linear-gradient(180deg, $gray-light, $white 81%);
+        }
+    }
+    &__year{
+        display: inline-block;
+        padding: 8px 17px;
+        border: 1px solid #ddd;
+        border-radius: 2rem;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $black;
+    }
+    &__title{
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-top: 1.5rem;
+        color: $black;
+        font-weight: 600;
+    }
+    &__place{
+        font-size: $default-font-size;
+        color: $black;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    &__text{
+        margin-bottom: 0.5rem;
+        color: $gray-dark;
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .education{
+        &:last-child{
+            margin-bottom: 4rem;
+        }
+        
+    }
+    .education__icon-wrapper{
+        justify-content: flex-start;
+    }
+    
+    
+}

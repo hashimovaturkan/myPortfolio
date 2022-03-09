@@ -1,0 +1,27 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './vendors/bootstrap/bootstrap-grid.scss';
+@import './vendors/bootstrap/bootstrap-utilities.scss';
+@import './vendor-extensions/bootstrap';
+
+@import './base/resets';
+@import './base/base';
+@import "./base/fonts";
+@import './base/typography';
+@import './base/animations';
+
+@import './components/social-media';
+@import './components/menu';
+@import './components/button';
+@import './components/education';
+@import './components/skill';
+@import './components/accordion';
+@import './components/list';
+@import './components/form';
+
+
+@import './layout/header';
+@import './layout/footer';
+
+@import './pages/home';
